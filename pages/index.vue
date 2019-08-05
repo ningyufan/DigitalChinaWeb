@@ -2,8 +2,20 @@
   <div class="homepage-hero-module">
     <div class="video-container">
       <div :style="fixStyle" class="filter">
-           <div class="title">
-             <h1>人民对美好生活的向往，<br>就是数字中国建设的优先行动方向</h1>
+          <div class="title">
+             <p>人民对美好生活的向往,就是数字中国建设的优先行动方向</p>
+          </div>
+           <div class="but-box">
+             <div>
+               <p class="chinese">
+                 <nuxt-link to="/chinese_index">中文</nuxt-link>
+              </p>
+             </div>
+             <div>
+              <p class="english">
+                 <nuxt-link to="/english_index">English</nuxt-link>
+              </p> 
+             </div>
            </div>
       </div>
       <video
@@ -24,17 +36,20 @@
   </div>
 </template>
 
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
+
 <script>
 import Video from 'video.js'
+
   export default {
-    name: 'login',
     components: {
       Video
     },
     data() {
       return {
         vedioCanPlay: false,
-        fixStyle: ''
+        fixStyle: '',
       }
     },
     methods: {
@@ -75,24 +90,5 @@ import Video from 'video.js'
 </script>
 
 <style scoped>
-  @import "@/assets/css/page_index.css";
-.homepage-hero-module,
-  .video-container {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .video-container .poster img,
-  .video-container video {
-    z-index: 0;
-    position: absolute;
-  }
-
-  .video-container .filter {
-    z-index: 1;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-  }
-
+  @import "@/assets/css/index/page_index.css";
 </style>
